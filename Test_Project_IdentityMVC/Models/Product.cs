@@ -56,8 +56,7 @@ namespace Test_Project_IdentityMVC.Models
 
             }
 
-            return
-                ConfigurationManager.AppSettings["ImageNull"];
+            return ConfigurationManager.AppSettings["ImageNull"];
         }
         public string[] GetThumbnails()
         {

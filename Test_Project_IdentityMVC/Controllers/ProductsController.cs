@@ -22,7 +22,6 @@ namespace Test_Project_IdentityMVC.Controllers
         public ActionResult Index(String keyword,DateTime? start , DateTime? end,int?  status, int? page, int? limit, string sortOrder, string searchString, string currentFilter)
         
         {
-            
             var product = db.Products.Include(p => p.CreateBy).Include(p => p.DeleteBy).Include(p => p.UpdateBy);
             if (searchString != null)
             {

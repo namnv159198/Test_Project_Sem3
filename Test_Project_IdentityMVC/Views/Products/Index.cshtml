@@ -8,6 +8,7 @@
     var resCloud = "https://res.cloudinary.com/namnguyen159198/";
     Layout = "~/Views/Admin/Layout/_Layout.cshtml";
     var Iconsort = ViewBag.SortIcon;
+    int countProduct = 0;
 }
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -28,29 +29,6 @@
                         <li class="breadcrumb-item">Product</li>
                         <li class="breadcrumb-item active">Product List</li>
                     </ul>
-                </div>
-                <div class="col-lg-6 col-md-4 col-sm-12 text-right">
-                    <div class="bh_chart hidden-xs">
-                        <div class="float-left m-r-15">
-                            <small>Visitors</small>
-                            <h6 class="mb-0 mt-1"><i class="icon-user"></i> 1,784</h6>
-                        </div>
-                        <span class="bh_visitors float-right">2,5,1,8,3,6,7,5</span>
-                    </div>
-                    <div class="bh_chart hidden-sm">
-                        <div class="float-left m-r-15">
-                            <small>Visits</small>
-                            <h6 class="mb-0 mt-1"><i class="icon-globe"></i> 325</h6>
-                        </div>
-                        <span class="bh_visits float-right">10,8,9,3,5,8,5</span>
-                    </div>
-                    <div class="bh_chart hidden-sm">
-                        <div class="float-left m-r-15">
-                            <small>Chats</small>
-                            <h6 class="mb-0 mt-1"><i class="icon-bubbles"></i> 13</h6>
-                        </div>
-                        <span class="bh_chats float-right">1,8,5,6,2,4,3,2</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -126,12 +104,13 @@
                                         <th>
                                             @Html.DisplayNameFor(model => model[0].Status)
                                         </th>
-                                        <th></th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
+                                        
                                         <tr>
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.Name)
@@ -147,12 +126,33 @@
                                                 @Html.DisplayFor(modelItem => item.CreatedAt)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.Status)
+                                                @if (item.Status.GetHashCode().Equals(0))
+                                                {
+                                                    <span class="border-success text-success border-success">
+                                                        @item.Status
+                                                    </span>
+                                                }
+                                                @if (item.Status.GetHashCode().Equals(1))
+                                                {
+                                                    <span class="border-success text-warning border-success">
+                                                        @item.Status
+                                                    </span>
+                                                }
+                                                @if (item.Status.GetHashCode().Equals(-1))
+                                                {
+                                                    <span class="border-success text-danger border-success">
+                                                        @item.Status
+                                                    </span>
+                                                }
+
+
+
                                             </td>
-                                            <td>
-                                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                                                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                            <td class="project-actions">
+
+                                                <a href="@Url.Action("Details", "Products", new {id = item.Id})" class="btn btn-sm btn-outline-primary border-primary"><i class="icon-eye"></i></a>
+                                                <a href="@Url.Action("Edit", "Products", new {id = item.Id})" class="btn btn-sm btn-outline-success border-success"><i class="icon-pencil"></i></a>
+                                                <a href="@Url.Action("Delete", "Products", new {id = item.Id})" class="btn btn-sm btn-outline-danger js-sweetalert border-danger" title="Delete" data-type="confirm"><i class="icon-trash"></i></a>
                                             </td>
                                         </tr>
                                     }
