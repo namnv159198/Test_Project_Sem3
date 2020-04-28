@@ -1,0 +1,44 @@
+﻿
+<html lang="en">
+
+
+<!-- Mirrored from thememakker.com/templates/lucid/hr/html/light/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Sep 2018 03:56:25 GMT -->
+<head>
+    <title>:: Lucid HR :: Home</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description" content="Lucid Bootstrap 4.1.1 Admin Template">
+    <meta name="author" content="WrapTheme, design by: ThemeMakker.com">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- VENDOR CSS -->
+    @Styles.Render("~/AdminTemplateContent/css")
+    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+</head>
+<body class="theme-orange">
+
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30"><img src="https://thememakker.com/templates/lucid/hr/html/assets/images/logo-icon.svg" width="48" height="48" alt="Lucid"></div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- Overlay For Sidebars -->
+    <div id="wrapper">
+        @RenderPage("_SliderBars.cshtml")
+        @RenderPage("_LeftNavigation.cshtml")
+        @RenderBody()
+    </div>
+
+
+
+    <!-- Javascript -->
+    @Scripts.Render("~/AdminTemplateBundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+
+<!-- Mirrored from thememakker.com/templates/lucid/hr/html/light/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Sep 2018 03:56:53 GMT -->
+</html>
