@@ -55,8 +55,8 @@ namespace Test_Project_IdentityMVC
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "236122867504963",
-               appSecret: "4d19b6512934bcd729c56b1b07ebe21a");
+               appId: "234489821097018",
+               appSecret: "0d0582ee123d5c308545a62c4abe7630");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
