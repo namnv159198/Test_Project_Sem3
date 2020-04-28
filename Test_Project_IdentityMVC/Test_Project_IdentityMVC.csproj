@@ -545,7 +545,7 @@
     <Content Include="Views\Admin\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Admin\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Admin\ExternalLoginConfirmation.cshtml" />
-=======
+
     <Content Include="Views\Feedback\Create.cshtml" />
     <Content Include="Views\Feedback\Index.cshtml" />
 
