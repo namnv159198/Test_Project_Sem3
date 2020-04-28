@@ -173,8 +173,10 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Common.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Product2Controller.cs" />
@@ -202,9 +204,20 @@
     <Compile Include="Migrations\202004270248592_changeArrAvatar.Designer.cs">
       <DependentUpon>202004270248592_changeArrAvatar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004280635185_feedback.cs" />
+    <Compile Include="Migrations\202004280635185_feedback.Designer.cs">
+      <DependentUpon>202004280635185_feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004280745361_feedback1.cs" />
+    <Compile Include="Migrations\202004280745361_feedback1.Designer.cs">
+      <DependentUpon>202004280745361_feedback1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\EditProduct.cs" />
+    <Compile Include="Models\Feedback.cs" />
+    <Compile Include="Models\FeedbackViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
@@ -431,6 +444,10 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="elegantfeedback\css\style.css" />
+    <Content Include="elegantfeedback\images\bg2.jpg" />
+    <Content Include="elegantfeedback\index.html" />
+    <Content Include="elegantfeedback\w3layouts-License.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -456,6 +473,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="elegantfeedback\images\Thumbs.db" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -523,9 +541,14 @@
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Admin\Register.cshtml" />
     <Content Include="Views\Admin\VerifyCode.cshtml" />
+
     <Content Include="Views\Admin\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Admin\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Admin\ExternalLoginConfirmation.cshtml" />
+=======
+    <Content Include="Views\Feedback\Create.cshtml" />
+    <Content Include="Views\Feedback\Index.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -558,6 +581,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004270248592_changeArrAvatar.resx">
       <DependentUpon>202004270248592_changeArrAvatar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004280635185_feedback.resx">
+      <DependentUpon>202004280635185_feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004280745361_feedback1.resx">
+      <DependentUpon>202004280745361_feedback1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
