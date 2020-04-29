@@ -51,6 +51,11 @@ namespace Test_Project_IdentityMVC.Models
         }
     }
 
+    public class ApplicationRole : IdentityRole
+    {
+        public ApplicationRole() : base() { }
+        public ApplicationRole(string roleName) : base(roleName) { }
+    }
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
@@ -67,5 +72,6 @@ namespace Test_Project_IdentityMVC.Models
         public System.Data.Entity.DbSet<Test_Project_IdentityMVC.Models.Product> Products { get; set; }
 
         public System.Data.Entity.DbSet<Test_Project_IdentityMVC.Models.Product2> Product2 { get; set; }
+
     }
 }
