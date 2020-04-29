@@ -181,6 +181,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Product2Controller.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -212,6 +213,10 @@
     <Compile Include="Migrations\202004280745361_feedback1.Designer.cs">
       <DependentUpon>202004280745361_feedback1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004290801529_role.cs" />
+    <Compile Include="Migrations\202004290801529_role.Designer.cs">
+      <DependentUpon>202004290801529_role.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Answer.cs" />
@@ -222,6 +227,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Product2.cs" />
+    <Compile Include="Models\RoleViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -541,14 +547,15 @@
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Admin\Register.cshtml" />
     <Content Include="Views\Admin\VerifyCode.cshtml" />
-
     <Content Include="Views\Admin\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Admin\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Admin\ExternalLoginConfirmation.cshtml" />
-
     <Content Include="Views\Feedback\Create.cshtml" />
     <Content Include="Views\Feedback\Index.cshtml" />
-
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -587,6 +594,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004280745361_feedback1.resx">
       <DependentUpon>202004280745361_feedback1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004290801529_role.resx">
+      <DependentUpon>202004290801529_role.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
