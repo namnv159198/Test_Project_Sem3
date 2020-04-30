@@ -899,12 +899,12 @@
     <Content Include="Views\Role\Create.cshtml" />
     <Content Include="Views\Role\Edit.cshtml" />
     <Content Include="Views\Role\Details.cshtml" />
-
     <Content Include="Views\Admin\UserProfile.cshtml" />
     <Content Include="Views\Admin\UpdateProfile.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\ListUser.cshtml" />
     <Content Include="Views\User\Details.cshtml" />
+    <Content Include="Views\Account\ConfirmLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
