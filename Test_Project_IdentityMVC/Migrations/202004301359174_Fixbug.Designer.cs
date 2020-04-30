@@ -7,13 +7,13 @@ namespace Test_Project_IdentityMVC.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddStatusFeedback : IMigrationMetadata
+    public sealed partial class Fixbug : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddStatusFeedback));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Fixbug));
         
         string IMigrationMetadata.Id
         {
-            get { return "202004291243484_AddStatusFeedback"; }
+            get { return "202004301359174_Fixbug"; }
         }
         
         string IMigrationMetadata.Source

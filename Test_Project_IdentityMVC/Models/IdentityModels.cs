@@ -30,7 +30,7 @@ namespace Test_Project_IdentityMVC.Models
             Other = 2
         }
         public DateTime CreatedDate { get; set; }
-        public DateTime? UpdatedDate { get; set; }
+        public DateTime? UpdatedAt { get; set; }
         public ApplicationUser()
         {
             this.CreatedDate = DateTime.Now;
@@ -70,7 +70,6 @@ namespace Test_Project_IdentityMVC.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        public DbSet<Feedback> Feedbacks { get; set; }
 
         public static ApplicationDbContext Create()
         {
@@ -80,6 +79,7 @@ namespace Test_Project_IdentityMVC.Models
         public System.Data.Entity.DbSet<Test_Project_IdentityMVC.Models.Product> Products { get; set; }
 
         public System.Data.Entity.DbSet<Test_Project_IdentityMVC.Models.Product2> Product2 { get; set; }
+       
 
     }
 }

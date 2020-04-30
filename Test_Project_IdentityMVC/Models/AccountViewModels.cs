@@ -138,7 +138,6 @@ namespace Test_Project_IdentityMVC.Models
             Address = User.Address;
             Birthday = User.Birthday.GetValueOrDefault();
             PhoneNumber = User.PhoneNumber;
-            UpdatedDate = User.UpdatedDate.GetValueOrDefault();
         }
         [Key]
         public string Id { get; set; }

@@ -548,30 +548,13 @@
     <Compile Include="Migrations\202004290801529_role.Designer.cs">
       <DependentUpon>202004290801529_role.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004291150096_ChangeArtUser.cs" />
-    <Compile Include="Migrations\202004291150096_ChangeArtUser.Designer.cs">
-      <DependentUpon>202004291150096_ChangeArtUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004291154013_ChangeArtUsers.cs" />
-    <Compile Include="Migrations\202004291154013_ChangeArtUsers.Designer.cs">
-      <DependentUpon>202004291154013_ChangeArtUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004291243484_AddStatusFeedback.cs" />
-    <Compile Include="Migrations\202004291243484_AddStatusFeedback.Designer.cs">
-      <DependentUpon>202004291243484_AddStatusFeedback.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004291340484_AddChangeUser.cs" />
-    <Compile Include="Migrations\202004291340484_AddChangeUser.Designer.cs">
-      <DependentUpon>202004291340484_AddChangeUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004291531092_addAtrBithday.cs" />
-    <Compile Include="Migrations\202004291531092_addAtrBithday.Designer.cs">
-      <DependentUpon>202004291531092_addAtrBithday.cs</DependentUpon>
+    <Compile Include="Migrations\202004301359174_Fixbug.cs" />
+    <Compile Include="Migrations\202004301359174_Fixbug.Designer.cs">
+      <DependentUpon>202004301359174_Fixbug.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EditProduct.cs" />
-    <Compile Include="Models\Feedback.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
@@ -899,7 +882,6 @@
     <Content Include="Views\Role\Create.cshtml" />
     <Content Include="Views\Role\Edit.cshtml" />
     <Content Include="Views\Role\Details.cshtml" />
-
     <Content Include="Views\Admin\UserProfile.cshtml" />
     <Content Include="Views\Admin\UpdateProfile.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
@@ -938,20 +920,8 @@
     <EmbeddedResource Include="Migrations\202004290801529_role.resx">
       <DependentUpon>202004290801529_role.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004291150096_ChangeArtUser.resx">
-      <DependentUpon>202004291150096_ChangeArtUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004291154013_ChangeArtUsers.resx">
-      <DependentUpon>202004291154013_ChangeArtUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004291243484_AddStatusFeedback.resx">
-      <DependentUpon>202004291243484_AddStatusFeedback.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004291340484_AddChangeUser.resx">
-      <DependentUpon>202004291340484_AddChangeUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004291531092_addAtrBithday.resx">
-      <DependentUpon>202004291531092_addAtrBithday.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004301359174_Fixbug.resx">
+      <DependentUpon>202004301359174_Fixbug.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
