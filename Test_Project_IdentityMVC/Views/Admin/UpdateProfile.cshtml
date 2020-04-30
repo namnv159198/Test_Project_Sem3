@@ -1,0 +1,130 @@
+﻿@model Test_Project_IdentityMVC.Models.ProfileViewModel
+
+@{
+    ViewBag.Title = "UpdateProfile";
+    Layout = "~/Views/Admin/Layout/_Layout.cshtml";
+}
+
+<div id="main-content" class="profilepage_2 blog-page" style="margin-top:-2px">
+    <div class="container-fluid">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 col-sm-12">
+                    <h2><a href="javascript:void(0);" class="btn btn-xs btn-link btn-toggle-fullwidth"><i class="fa fa-arrow-left"></i></a> User Profile v2</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="@Url.Action("Index","Admin")"><i class="icon-home"></i></a></li>
+                        <li class="breadcrumb-item">Pages</li>
+                        <li class="breadcrumb-item active">User Profile </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.Email)
+            @Html.HiddenFor(model => model.CreatedDate)
+            <div class="row clearfix">
+
+                <div class="col-lg-12 col-md-12">
+                    <div class="card profile-header">
+                        <div class="body">
+                            <div class="profile-image">
+                                <img src="~/AdminTemplateAssets/assets/images/user-small.png" class="rounded-circle" alt="" width="300px">
+                            </div>
+                            <div>
+                                <h4 class="m-b-0"><strong>@Model.UserName</strong> </h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="row clearfix">
+                            <h3 class="col-lg-10"> Update Information</h3>
+                            <a href="#" class="col-lg-2">Update Information</a>
+                        </div>
+                        <div class="body">
+                            <small class="text-muted">User Name: </small>
+                            <p>
+                                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                            </p>
+                            <hr>
+                            <small class="text-muted">First Name: </small>
+                            <p>
+                                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                            </p>
+                            <hr>
+                            <small class="text-muted">Last Name: </small>
+                            <p>
+                                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                            </p>
+                            <hr>
+                            <small class="text-muted">Gender: </small>
+                            <p>
+                                @if (@Model.Gender.GetHashCode().Equals(0))
+                                {
+                                <p>Male</p>
+                            }
+                                @if (@Model.Gender.GetHashCode().Equals(1))
+                                {
+                                    <p>Female</p>
+                                }
+                                @if (@Model.Gender.GetHashCode().Equals(2))
+                                {
+                                    <p>Other</p>
+                                }
+
+                                </p>
+                                <hr>
+                                <small class="text-muted">Address: </small>
+                                <p>
+                                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                                </p>
+                                <hr>
+                                <small class="text-muted">Mobile: </small>
+                                <p>
+                                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                                </p>
+                                <hr>
+                                <small class="text-muted">Birth Date: </small>
+                                <p class="m-b-0">
+                                    @Html.EditorFor(model => model.Birthday, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "text-danger" })
+                                </p>
+                                <hr>
+                                <small class="text-muted">Date joined: </small>
+                                <p>
+                                    @Model.CreatedDate
+                                </p>
+                                <hr>
+                                <p>
+                                    <input type="submit" value="Save" class="btn btn-default" />
+                                </p>
+                                <hr>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+
+            }
+
+    </div>
+</div>
+
+
+
+
+
