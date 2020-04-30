@@ -64,9 +64,88 @@ namespace Test_Project_IdentityMVC.Controllers
             ViewBag.ImageUser = UserLogin.Avatar;
             return View();
         }
+
+        public ActionResult UserProfile(string UserLogin)
+        {
+            var User = UserManager.Users.FirstOrDefault(u => u.Email == UserLogin);
+            if (UserLogin == null || User == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            ProfileViewModel profileUser = new ProfileViewModel()
+                {
+                    Id = User.Id,
+                    Email = User.Email,
+                    FirstName = User.FirstName,
+                    LastName = User.LastName,
+                    Gender = User.Gender.GetHashCode(),
+                    Address = User.Address,
+                    CreatedDate = User.CreatedDate,
+                    PhoneNumber = User.PhoneNumber,
+                    Avatar = User.Avatar,
+                    UserName = User.UserName
+                };
+                return View(profileUser);
+            }
+
+        // public ActionResult UpdateProfile(string EmailUser)
+        // {
+        //     var User = UserManager.Users.FirstOrDefault(u => u.Email == EmailUser);
+        //     if (EmailUser == null || User == null)
+        //     {
+        //         return RedirectToAction("UserProfile", "Admin", EmailUser);
+        //     }
         //
-        // GET: /Account/Login
-        [AllowAnonymous]
+        //     var profileUser = new ProfileViewModel()
+        //     {
+        //         Id = User.Id,
+        //         Email = User.Email,
+        //         FirstName = User.FirstName,
+        //         LastName = User.LastName,
+        //         Gender = User.Gender.GetHashCode(),
+        //         Address = User.Address,
+        //         CreatedDate = User.CreatedDate,
+        //         Birthday = User.Birthday.GetValueOrDefault(),
+        //         UpdatedDate = User.UpdatedDate.GetValueOrDefault(),
+        //         PhoneNumber = User.PhoneNumber,
+        //         Avatar = User.Avatar,
+        //         UserName = User.UserName
+        //     };
+        //     return View(profileUser);
+        // }
+        // [HttpPost]
+        // [AllowAnonymous]
+        // [ValidateAntiForgeryToken]
+        // public async Task<ActionResult> UpdateProfile(UpdateProfileViewModel profileUser)
+        // {
+        //
+        //     var user = new ApplicationUser
+        //     {
+        //         Id = profileUser.Id,
+        //         UserName = profileUser.UserName,
+        //         Avatar = profileUser.Avatar,
+        //         FirstName = profileUser.FirstName,
+        //         LastName = profileUser.LastName,
+        //         Address = profileUser.Address,
+        //         Birthday = profileUser.Birthday,
+        //         PhoneNumber = profileUser.PhoneNumber,
+        //         CreatedDate = profileUser.CreatedDate,
+        //         UpdatedDate = DateTime.Now,
+        //         Email = profileUser.Email
+        //     };
+        //     
+        //     var result = await UserManager.UpdateAsync(user);
+        //     if (result.Succeeded)
+        //     { 
+        //         return View("UserProfile", profileUser.Email);
+        //     }
+        //
+        //     return View(profileUser.Email);
+        // }
+
+       //
+       // GET: /Account/Login
+       [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;

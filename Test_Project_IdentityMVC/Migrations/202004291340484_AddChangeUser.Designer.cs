@@ -7,13 +7,13 @@ namespace Test_Project_IdentityMVC.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddEnumStatus : IMigrationMetadata
+    public sealed partial class AddChangeUser : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddEnumStatus));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddChangeUser));
         
         string IMigrationMetadata.Id
         {
-            get { return "202004240400213_AddEnumStatus"; }
+            get { return "202004291340484_AddChangeUser"; }
         }
         
         string IMigrationMetadata.Source

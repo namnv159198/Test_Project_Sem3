@@ -173,14 +173,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Common.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Product2Controller.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -192,10 +191,6 @@
     <Compile Include="Migrations\202004240351357_AddStatusProductTable.Designer.cs">
       <DependentUpon>202004240351357_AddStatusProductTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004240400213_AddEnumStatus.cs" />
-    <Compile Include="Migrations\202004240400213_AddEnumStatus.Designer.cs">
-      <DependentUpon>202004240400213_AddEnumStatus.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202004250952439_AddProduct2Table.cs" />
     <Compile Include="Migrations\202004250952439_AddProduct2Table.Designer.cs">
       <DependentUpon>202004250952439_AddProduct2Table.cs</DependentUpon>
@@ -204,24 +199,39 @@
     <Compile Include="Migrations\202004270248592_changeArrAvatar.Designer.cs">
       <DependentUpon>202004270248592_changeArrAvatar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004280635185_feedback.cs" />
-    <Compile Include="Migrations\202004280635185_feedback.Designer.cs">
-      <DependentUpon>202004280635185_feedback.cs</DependentUpon>
+    <Compile Include="Migrations\202004290801529_role.cs" />
+    <Compile Include="Migrations\202004290801529_role.Designer.cs">
+      <DependentUpon>202004290801529_role.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004280745361_feedback1.cs" />
-    <Compile Include="Migrations\202004280745361_feedback1.Designer.cs">
-      <DependentUpon>202004280745361_feedback1.cs</DependentUpon>
+    <Compile Include="Migrations\202004291150096_ChangeArtUser.cs" />
+    <Compile Include="Migrations\202004291150096_ChangeArtUser.Designer.cs">
+      <DependentUpon>202004291150096_ChangeArtUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004291154013_ChangeArtUsers.cs" />
+    <Compile Include="Migrations\202004291154013_ChangeArtUsers.Designer.cs">
+      <DependentUpon>202004291154013_ChangeArtUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004291243484_AddStatusFeedback.cs" />
+    <Compile Include="Migrations\202004291243484_AddStatusFeedback.Designer.cs">
+      <DependentUpon>202004291243484_AddStatusFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004291340484_AddChangeUser.cs" />
+    <Compile Include="Migrations\202004291340484_AddChangeUser.Designer.cs">
+      <DependentUpon>202004291340484_AddChangeUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004291531092_addAtrBithday.cs" />
+    <Compile Include="Migrations\202004291531092_addAtrBithday.Designer.cs">
+      <DependentUpon>202004291531092_addAtrBithday.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\EditProduct.cs" />
     <Compile Include="Models\Feedback.cs" />
-    <Compile Include="Models\FeedbackViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Product2.cs" />
+    <Compile Include="Models\RoleViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -444,10 +454,6 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\PagedList.css" />
-    <Content Include="elegantfeedback\css\style.css" />
-    <Content Include="elegantfeedback\images\bg2.jpg" />
-    <Content Include="elegantfeedback\index.html" />
-    <Content Include="elegantfeedback\w3layouts-License.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -473,7 +479,6 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="elegantfeedback\images\Thumbs.db" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -544,8 +549,12 @@
     <Content Include="Views\Admin\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Admin\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Admin\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Feedback\Create.cshtml" />
-    <Content Include="Views\Feedback\Index.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\Details.cshtml" />
+    <Content Include="Views\Admin\UserProfile.cshtml" />
+    <Content Include="Views\Admin\UpdateProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -570,20 +579,29 @@
     <EmbeddedResource Include="Migrations\202004240351357_AddStatusProductTable.resx">
       <DependentUpon>202004240351357_AddStatusProductTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004240400213_AddEnumStatus.resx">
-      <DependentUpon>202004240400213_AddEnumStatus.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004250952439_AddProduct2Table.resx">
       <DependentUpon>202004250952439_AddProduct2Table.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004270248592_changeArrAvatar.resx">
       <DependentUpon>202004270248592_changeArrAvatar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004280635185_feedback.resx">
-      <DependentUpon>202004280635185_feedback.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004290801529_role.resx">
+      <DependentUpon>202004290801529_role.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004280745361_feedback1.resx">
-      <DependentUpon>202004280745361_feedback1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004291150096_ChangeArtUser.resx">
+      <DependentUpon>202004291150096_ChangeArtUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004291154013_ChangeArtUsers.resx">
+      <DependentUpon>202004291154013_ChangeArtUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004291243484_AddStatusFeedback.resx">
+      <DependentUpon>202004291243484_AddStatusFeedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004291340484_AddChangeUser.resx">
+      <DependentUpon>202004291340484_AddChangeUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004291531092_addAtrBithday.resx">
+      <DependentUpon>202004291531092_addAtrBithday.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

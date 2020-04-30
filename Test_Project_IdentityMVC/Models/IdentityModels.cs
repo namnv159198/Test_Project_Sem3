@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace Test_Project_IdentityMVC.Models
         [Display(Name = "Address")]
         public string Address { get; set; }
         [Display(Name = "Birthday")]
-        public string Birthday { get; set; }
+        public DateTime? Birthday { get; set; }
         [Display(Name = "Gender")]
         public GenderEnum Gender { get; set; }
         public enum GenderEnum
@@ -29,6 +30,7 @@ namespace Test_Project_IdentityMVC.Models
             Other = 2
         }
         public DateTime CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
         public ApplicationUser()
         {
             this.CreatedDate = DateTime.Now;
@@ -40,8 +42,14 @@ namespace Test_Project_IdentityMVC.Models
         public enum ActiveEnum
         {
             Active = 0,
-            Deactive = 1
+            Banned = 1,
+
         }
+        [Display(Name = "Update By")]
+        public string UpdateById { get; set; }
+        [ForeignKey("UpdateById")]
+        public virtual ApplicationUser UpdatedBy { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -51,6 +59,11 @@ namespace Test_Project_IdentityMVC.Models
         }
     }
 
+    public class ApplicationRole : IdentityRole
+    {
+        public ApplicationRole() : base() { }
+        public ApplicationRole(string roleName) : base(roleName) { }
+    }
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
@@ -67,5 +80,6 @@ namespace Test_Project_IdentityMVC.Models
         public System.Data.Entity.DbSet<Test_Project_IdentityMVC.Models.Product> Products { get; set; }
 
         public System.Data.Entity.DbSet<Test_Project_IdentityMVC.Models.Product2> Product2 { get; set; }
+
     }
 }

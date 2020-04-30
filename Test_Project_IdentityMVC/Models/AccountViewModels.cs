@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Configuration;
 
@@ -85,6 +86,9 @@ namespace Test_Project_IdentityMVC.Models
         {
             this.Avatar = ConfigurationManager.AppSettings["UserAvatarDefault"];
         }
+
+       
+
     }
 
     public class ResetPasswordViewModel
@@ -116,5 +120,74 @@ namespace Test_Project_IdentityMVC.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+    }
+
+    public class UpdateProfileViewModel
+    {
+        public UpdateProfileViewModel()
+        {
+
+        }
+        public UpdateProfileViewModel(ApplicationUser User)
+        {
+            Id = User.Id;
+            UserName = User.UserName;
+            Avatar = User.Avatar;
+            FirstName = User.FirstName;
+            LastName = User.LastName;
+            Address = User.Address;
+            Birthday = User.Birthday.GetValueOrDefault();
+            PhoneNumber = User.PhoneNumber;
+            UpdatedDate = User.UpdatedDate.GetValueOrDefault();
+        }
+        [Key]
+        public string Id { get; set; }
+        public string Email { get; set; }
+        public string Avatar { get; set; }
+        public string UserName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int Gender { get; set; }
+        public string Address { get; set; }
+        public string PhoneNumber { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime Birthday { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime UpdatedDate { get; set; }
+
+    }
+
+    public class ProfileViewModel
+    {
+        [Key]
+        public string Id { get; set; }
+        public string Email { get; set; }
+        public string Avatar { get; set; }
+        public string UserName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int Gender { get; set; }
+        public string Address { get; set; }
+        public string PhoneNumber { get; set; }
+        public DateTime Birthday { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime UpdatedDate { get; set; }
+        public string GetDefaultThumbnails()
+        {
+            if (this.Avatar != null && this.Avatar.Length > 0)
+            {
+                var arrayThumbnails = this.Avatar.Split(',');
+                if (arrayThumbnails.Length > 0)
+                {
+                    return
+                        ConfigurationManager.AppSettings["CloudinaryPrefix"] + arrayThumbnails[0];
+                }
+
+            }
+
+            return
+                ConfigurationManager.AppSettings["UserAvatarDefault"];
+        }
+
     }
 }

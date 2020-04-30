@@ -7,13 +7,13 @@ namespace Test_Project_IdentityMVC.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class feedback1 : IMigrationMetadata
+    public sealed partial class ChangeArtUser : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(feedback1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeArtUser));
         
         string IMigrationMetadata.Id
         {
-            get { return "202004280745361_feedback1"; }
+            get { return "202004291150096_ChangeArtUser"; }
         }
         
         string IMigrationMetadata.Source
