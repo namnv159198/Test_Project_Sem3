@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Purple Admin</title>
+    <!-- plugins:css -->
+    <!-- VENDOR CSS -->
+    @Styles.Render("~/AdminTemplateContent2/css")
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+</head>
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        @RenderPage("_NavBarLayout2.cshtml")
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_sidebar.html -->
+            @RenderPage("_SliderBarLayout2.cshtml")
+            <!-- partial -->
+            <div class="main-panel">
+
+                @RenderBody()
+                <!-- content-wrapper ends -->
+                <!-- partial:partials/_footer.html -->
+                @RenderPage("_FooterLayout2.cshtml")
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- Javascript -->
+    @Scripts.Render("~/AdminTemplateBundles2/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

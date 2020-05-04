@@ -51,6 +51,23 @@ namespace Test_Project_IdentityMVC
                 "~/AdminTemplateAssets/assets/bundles/knob.bundle.js",
                 "~/AdminTemplateAssets/assets/bundles/mainscripts.bundle.js",
                 "~/AdminTemplateAssets/assets/js/index.js"));
+            // Admin Template 2
+            bundles.Add(new StyleBundle("~/AdminTemplateContent2/css").Include(
+                "~/AdminTemplateAssets2/assets/vendors/mdi/css/materialdesignicons.min.css",
+                "~/AdminTemplateAssets2/assets/vendors/css/vendor.bundle.base.css",
+                "~/AdminTemplateAssets2/assets/css/style.css",
+                "~/AdminTemplateAssets2/assets/images/favicon.png"));
+
+            bundles.Add(new ScriptBundle("~/AdminTemplateBundles2/jquery").Include(
+                "~/AdminTemplateAssets2/assets/vendors/js/vendor.bundle.base.js",
+                "~/AdminTemplateAssets2/assets/vendors/chart.js/Chart.min.js",
+                "~/AdminTemplateAssets2/assets/js/off-canvas.js",
+                "~/AdminTemplateAssets2/assets/js/hoverable-collapse.js",
+                "~/AdminTemplateAssets2/assets/js/misc.js",
+                "~/AdminTemplateAssets2/assets/js/dashboard.js",
+                "~/AdminTemplateAssets2/assets/js/todolist.js"
+                ));
+
         }
     }
 }

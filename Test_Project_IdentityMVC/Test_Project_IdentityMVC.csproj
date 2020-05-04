@@ -521,67 +521,88 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\Product2Controller.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004230157594_AddProductTable.cs" />
-    <Compile Include="Migrations\202004230157594_AddProductTable.Designer.cs">
-      <DependentUpon>202004230157594_AddProductTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004240351357_AddStatusProductTable.cs" />
-    <Compile Include="Migrations\202004240351357_AddStatusProductTable.Designer.cs">
-      <DependentUpon>202004240351357_AddStatusProductTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004250952439_AddProduct2Table.cs" />
-    <Compile Include="Migrations\202004250952439_AddProduct2Table.Designer.cs">
-      <DependentUpon>202004250952439_AddProduct2Table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004270248592_changeArrAvatar.cs" />
-    <Compile Include="Migrations\202004270248592_changeArrAvatar.Designer.cs">
-      <DependentUpon>202004270248592_changeArrAvatar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004290801529_role.cs" />
-    <Compile Include="Migrations\202004290801529_role.Designer.cs">
-      <DependentUpon>202004290801529_role.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004291150096_ChangeArtUser.cs" />
-    <Compile Include="Migrations\202004291150096_ChangeArtUser.Designer.cs">
-      <DependentUpon>202004291150096_ChangeArtUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004291154013_ChangeArtUsers.cs" />
-    <Compile Include="Migrations\202004291154013_ChangeArtUsers.Designer.cs">
-      <DependentUpon>202004291154013_ChangeArtUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004291243484_AddStatusFeedback.cs" />
-    <Compile Include="Migrations\202004291243484_AddStatusFeedback.Designer.cs">
-      <DependentUpon>202004291243484_AddStatusFeedback.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004291340484_AddChangeUser.cs" />
-    <Compile Include="Migrations\202004291340484_AddChangeUser.Designer.cs">
-      <DependentUpon>202004291340484_AddChangeUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004291531092_addAtrBithday.cs" />
-    <Compile Include="Migrations\202004291531092_addAtrBithday.Designer.cs">
-      <DependentUpon>202004291531092_addAtrBithday.cs</DependentUpon>
+    <Compile Include="Migrations\202004301447408_CreateNewDatabase.cs" />
+    <Compile Include="Migrations\202004301447408_CreateNewDatabase.Designer.cs">
+      <DependentUpon>202004301447408_CreateNewDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EditProduct.cs" />
-    <Compile Include="Models\Feedback.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\Product2.cs" />
     <Compile Include="Models\RoleViewModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminTemplateAssets2\assets\css\style.css" />
+    <Content Include="AdminTemplateAssets2\assets\images\dashboard\circle.png" />
+    <Content Include="AdminTemplateAssets2\assets\images\dashboard\circle.svg" />
+    <Content Include="AdminTemplateAssets2\assets\images\dashboard\img_1.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\dashboard\img_2.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\dashboard\img_3.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\dashboard\img_4.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces-clipart\pic-1.png" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces-clipart\pic-2.png" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces-clipart\pic-3.png" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces-clipart\pic-4.png" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face1.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face10.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face11.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face12.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face13.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face14.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face15.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face16.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face17.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face18.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face19.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face2.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face20.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face21.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face22.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face23.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face24.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face25.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face26.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face27.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face3.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face4.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face5.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face6.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face7.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face8.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\faces\face9.jpg" />
+    <Content Include="AdminTemplateAssets2\assets\images\favicon.png" />
+    <Content Include="AdminTemplateAssets2\assets\images\logo-mini.svg" />
+    <Content Include="AdminTemplateAssets2\assets\images\logo.svg" />
+    <Content Include="AdminTemplateAssets2\assets\images\sprites\blue.png" />
+    <Content Include="AdminTemplateAssets2\assets\images\sprites\dark.png" />
+    <Content Include="AdminTemplateAssets2\assets\images\sprites\flag.png" />
+    <Content Include="AdminTemplateAssets2\assets\images\sprites\green.png" />
+    <Content Include="AdminTemplateAssets2\assets\images\sprites\jsgrid-icons.png" />
+    <Content Include="AdminTemplateAssets2\assets\images\sprites\red.png" />
+    <Content Include="AdminTemplateAssets2\assets\images\sprites\yellow.png" />
+    <Content Include="AdminTemplateAssets2\assets\js\chart.js" />
+    <Content Include="AdminTemplateAssets2\assets\js\dashboard.js" />
+    <Content Include="AdminTemplateAssets2\assets\js\file-upload.js" />
+    <Content Include="AdminTemplateAssets2\assets\js\hoverable-collapse.js" />
+    <Content Include="AdminTemplateAssets2\assets\js\misc.js" />
+    <Content Include="AdminTemplateAssets2\assets\js\off-canvas.js" />
+    <Content Include="AdminTemplateAssets2\assets\js\todo.js" />
+    <Content Include="AdminTemplateAssets2\assets\js\todolist.js" />
+    <Content Include="AdminTemplateAssets2\assets\vendors\chart.js\Chart.min.js" />
+    <Content Include="AdminTemplateAssets2\assets\vendors\css\vendor.bundle.base.css" />
+    <Content Include="AdminTemplateAssets2\assets\vendors\js\vendor.bundle.base.js" />
+    <Content Include="AdminTemplateAssets2\assets\vendors\mdi\css\materialdesignicons.min.css" />
     <Content Include="AdminTemplateAssets\assets\bundles\chartist.bundle.js" />
     <Content Include="AdminTemplateAssets\assets\bundles\datatablescripts.bundle.js" />
     <Content Include="AdminTemplateAssets\assets\bundles\easypiechart.bundle.js" />
@@ -825,6 +846,71 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="AdminTemplateAssets2\assets\css\style.css.map" />
+    <Content Include="AdminTemplateAssets2\assets\fonts\Ubuntu\Ubuntu-Bold.eot" />
+    <Content Include="AdminTemplateAssets2\assets\fonts\Ubuntu\Ubuntu-Bold.ttf" />
+    <Content Include="AdminTemplateAssets2\assets\fonts\Ubuntu\Ubuntu-Bold.woff" />
+    <Content Include="AdminTemplateAssets2\assets\fonts\Ubuntu\Ubuntu-Bold.woff2" />
+    <Content Include="AdminTemplateAssets2\assets\fonts\Ubuntu\Ubuntu-Light.eot" />
+    <Content Include="AdminTemplateAssets2\assets\fonts\Ubuntu\Ubuntu-Light.ttf" />
+    <Content Include="AdminTemplateAssets2\assets\fonts\Ubuntu\Ubuntu-Light.woff" />
+    <Content Include="AdminTemplateAssets2\assets\fonts\Ubuntu\Ubuntu-Light.woff2" />
+    <Content Include="AdminTemplateAssets2\assets\fonts\Ubuntu\Ubuntu-Medium.eot" />
+    <Content Include="AdminTemplateAssets2\assets\fonts\Ubuntu\Ubuntu-Medium.ttf" />
+    <Content Include="AdminTemplateAssets2\assets\fonts\Ubuntu\Ubuntu-Medium.woff" />
+    <Content Include="AdminTemplateAssets2\assets\fonts\Ubuntu\Ubuntu-Medium.woff2" />
+    <Content Include="AdminTemplateAssets2\assets\fonts\Ubuntu\Ubuntu-Regular.eot" />
+    <Content Include="AdminTemplateAssets2\assets\fonts\Ubuntu\Ubuntu-Regular.ttf" />
+    <Content Include="AdminTemplateAssets2\assets\fonts\Ubuntu\Ubuntu-Regular.woff" />
+    <Content Include="AdminTemplateAssets2\assets\fonts\Ubuntu\Ubuntu-Regular.woff2" />
+    <Content Include="AdminTemplateAssets2\assets\scss\components\_badges.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\components\_bootstrap-progress.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\components\_breadcrumbs.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\components\_buttons.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\components\_cards.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\components\_checkbox-radio.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\components\_dropdown.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\components\_forms.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\components\_icons.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\components\_lists.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\components\_preview.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\components\_tables.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\components\_todo-list.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\landing-screens\_auth.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\mixins\_animation.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\mixins\_background.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\mixins\_badges.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\mixins\_blockqoute.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\mixins\_breadcrumbs.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\mixins\_buttons.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\mixins\_cards.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\mixins\_misc.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\mixins\_pagination.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\mixins\_popovers.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\mixins\_text.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\mixins\_tooltips.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\style.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\_dashboard.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\_demo.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\_fonts.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\_footer.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\_functions.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\_layouts.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\_misc.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\_navbar.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\_reset.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\_sidebar.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\_typography.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\_utilities.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\_variables.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\_vertical-wrapper.scss" />
+    <Content Include="AdminTemplateAssets2\assets\scss\_widget-grid.scss" />
+    <Content Include="AdminTemplateAssets2\assets\vendors\js\bootstrap.min.js.map" />
+    <Content Include="AdminTemplateAssets2\assets\vendors\mdi\css\materialdesignicons.min.css.map" />
+    <Content Include="AdminTemplateAssets2\assets\vendors\mdi\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="AdminTemplateAssets2\assets\vendors\mdi\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="AdminTemplateAssets2\assets\vendors\mdi\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="AdminTemplateAssets2\assets\vendors\mdi\fonts\materialdesignicons-webfont.woff2" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -884,11 +970,6 @@
     <Content Include="Views\Admin\Layout\_Layout_For_Login_Register.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Layout\_LeftNavigation.cshtml" />
-    <Content Include="Views\Product2\Create.cshtml" />
-    <Content Include="Views\Product2\Delete.cshtml" />
-    <Content Include="Views\Product2\Details.cshtml" />
-    <Content Include="Views\Product2\Edit.cshtml" />
-    <Content Include="Views\Product2\Index.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Admin\Register.cshtml" />
     <Content Include="Views\Admin\VerifyCode.cshtml" />
@@ -905,6 +986,12 @@
     <Content Include="Views\User\ListUser.cshtml" />
     <Content Include="Views\User\Details.cshtml" />
     <Content Include="Views\Account\ConfirmLogin.cshtml" />
+    <Content Include="Views\Admin\Index2.cshtml" />
+    <Content Include="Views\Admin\Layout\_Layout2.cshtml" />
+    <Content Include="Views\Admin\Layout\_FooterLayout2.cshtml" />
+    <Content Include="Views\Admin\Layout\_NavbarLayout2.cshtml" />
+    <Content Include="Views\Admin\Layout\_SliderBarLayout2.cshtml" />
+    <Content Include="Views\Admin\Layout\_Layout2_For_Login_Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -923,40 +1010,13 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004230157594_AddProductTable.resx">
-      <DependentUpon>202004230157594_AddProductTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004240351357_AddStatusProductTable.resx">
-      <DependentUpon>202004240351357_AddStatusProductTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004250952439_AddProduct2Table.resx">
-      <DependentUpon>202004250952439_AddProduct2Table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004270248592_changeArrAvatar.resx">
-      <DependentUpon>202004270248592_changeArrAvatar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004290801529_role.resx">
-      <DependentUpon>202004290801529_role.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004291150096_ChangeArtUser.resx">
-      <DependentUpon>202004291150096_ChangeArtUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004291154013_ChangeArtUsers.resx">
-      <DependentUpon>202004291154013_ChangeArtUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004291243484_AddStatusFeedback.resx">
-      <DependentUpon>202004291243484_AddStatusFeedback.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004291340484_AddChangeUser.resx">
-      <DependentUpon>202004291340484_AddChangeUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004291531092_addAtrBithday.resx">
-      <DependentUpon>202004291531092_addAtrBithday.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202004301447408_CreateNewDatabase.resx">
+      <DependentUpon>202004301447408_CreateNewDatabase.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

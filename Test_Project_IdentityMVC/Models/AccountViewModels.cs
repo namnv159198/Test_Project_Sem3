@@ -136,7 +136,7 @@ namespace Test_Project_IdentityMVC.Models
             FirstName = User.FirstName;
             LastName = User.LastName;
             Address = User.Address;
-            Birthday = User.Birthday.GetValueOrDefault();
+            Birthday = User.BirthdayAt.GetValueOrDefault();
             PhoneNumber = User.PhoneNumber;
             UpdatedDate = User.UpdatedDate.GetValueOrDefault();
         }

@@ -20,7 +20,7 @@ namespace Test_Project_IdentityMVC.Models
         [Display(Name = "Address")]
         public string Address { get; set; }
         [Display(Name = "Birthday")]
-        public DateTime? Birthday { get; set; }
+        public DateTime? BirthdayAt { get; set; }
         [Display(Name = "Gender")]
         public GenderEnum Gender { get; set; }
         public enum GenderEnum
@@ -70,7 +70,6 @@ namespace Test_Project_IdentityMVC.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        public DbSet<Feedback> Feedbacks { get; set; }
 
         public static ApplicationDbContext Create()
         {
@@ -79,7 +78,6 @@ namespace Test_Project_IdentityMVC.Models
 
         public System.Data.Entity.DbSet<Test_Project_IdentityMVC.Models.Product> Products { get; set; }
 
-        public System.Data.Entity.DbSet<Test_Project_IdentityMVC.Models.Product2> Product2 { get; set; }
 
     }
 }
