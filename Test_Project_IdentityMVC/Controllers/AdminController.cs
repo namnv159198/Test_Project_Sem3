@@ -51,10 +51,23 @@ namespace Test_Project_IdentityMVC.Controllers
                 _userManager = value;
             }
         }
+
+        public ActionResult Index2()
+        {
+            return View();
+        }
+
+
         public ActionResult Index()
         {
             var GetUser = User.Identity.GetUserName();
             var UserLogin = UserManager.Users.FirstOrDefault(u => u.Email == GetUser);
+            // bool EmailConfirmed = UserLogin.EmailConfirmed;
+            // if (!EmailConfirmed)
+            // {
+            //     ViewBag.errorMessage = "You must have a confirmed email to log on.";
+            //     return View("Error");
+            // }
             if (GetUser  == null || UserLogin == null )
             {
                 return RedirectToAction("Login", "Admin");
@@ -161,6 +174,16 @@ namespace Test_Project_IdentityMVC.Controllers
 
                 return View(model);
             }
+
+            // var user = await UserManager.FindByNameAsync(model.Email);
+            // if (user != null)
+            // {
+            //     if (!await UserManager.IsEmailConfirmedAsync(user.Id))
+            //     {
+            //         ViewBag.errorMessage = "You must have a confirmed email to log on.";
+            //         return View("Error");
+            //     }
+            // }
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true

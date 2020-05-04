@@ -6,222 +6,196 @@
     String StringNull = null;
     var resCloud = "https://res.cloudinary.com/namnguyen159198/";
     var StringJPG = ".jpg";
-    Layout = "~/Views/Admin/Layout/_Layout.cshtml";
+    Layout = "~/Views/Admin/Layout/_Layout2.cshtml";
 }
+    <div class="content-wrapper">
+        @using (Html.BeginForm("Edit", "Products", FormMethod.Post, new { @class = "product-form" }))
+        {
+            @Html.AntiForgeryToken()
 
-<div id="main-content" style="margin-top:-2px;">
-    <div class="container-fluid">
-        <div class="block-header">
-            <div class="row">
-                <div class="col-lg-6 col-md-8 col-sm-12">
-                    <h2><a href="javascript:void(0);" class="btn btn-xs btn-link btn-toggle-fullwidth"><i class="fa fa-arrow-left"></i></a> Create New Product</h2>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index-2.html"><i class="icon-home"></i></a></li>
-                        <li class="breadcrumb-item">Product</li>
-                        <li class="breadcrumb-item active">Add Product</li>
-                    </ul>
+            <div class="form-horizontal">
+                <h4>Product</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Id)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="row clearfix">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="card">
-                    <div class="body">
-                        @using (Html.BeginForm("Edit", "Products", FormMethod.Post, new { @class = "product-form" }))
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Thumbnails, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10 uploaded">
+                        <button type="button" id="upload_widget" class="btn bg-primary">Upload files</button><br />
+                        @if (Model.GetThumbnailIDs().Length > 0)
                         {
-                            @Html.AntiForgeryToken()
-
-                            <div class="form-horizontal">
-                                <h4>Product</h4>
-                                <hr />
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                @Html.HiddenFor(model => model.Id)
-
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Thumbnails, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10 uploaded">
-                                        <button type="button" id="upload_widget" class="btn bg-primary">Upload files</button><br />
-                                        @if (Model.GetThumbnailIDs().Length > 0)
-                                        {
-                                            <ul class="cloudinary-thumbnails">
-                                                @foreach (var i in Model.GetThumbnailIDs())
-                                                {
-                                                    <li class="cloudinary-thumbnail active" value="@i">
-                                                        <img src="@resCloud@i@StringJPG" alt="Alternate" class="img-thumbnail" width="100" height="100" with:100% />
-                                                        <a href="#" class="cloudinary-delete">x</a>
-                                                    </li>
-
-                                                }
-                                            </ul>
-                                        }
-
-                                        @Html.ValidationMessageFor(model => model.Thumbnails, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.CreatedAt, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Model.CreatedAt
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.CreateBy, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10 ">
-                                        @Html.DisplayFor(model => model.CreateBy.Email)
-                                    </div>
-                                </div>
-                                <div class="form-group" hidden>
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.CreatedAt, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.CreatedAt, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                <div class="form-group" hidden>
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.CreateBy, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.CreateBy, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                <div class="form-group" hidden>
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.CreateById, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.CreateById, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.UpdateBy, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-
-                                        @if (@Model.UpdateBy == null)
-                                        {
-                                            <span>NULL</span>
-                                        }
-                                        else
-                                        {
-
-                                            @Html.DisplayFor(model => model.UpdateBy.Email)
-                                        }
-
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Html.EnumDropDownListFor(model => model.Status, "Please select", new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @if (Model.GetThumbnailIDs().Length > 0)
+                            <ul class="cloudinary-thumbnails">
+                                @foreach (var i in Model.GetThumbnailIDs())
                                 {
-                                    foreach (var i in Model.GetThumbnailIDs())
-                                    {
-                                        <input type="hidden" name="thumbnails[]" data-cloudinary-public-id="@i" value="@("image/upload/v1587911740/"+i+".jpg")">
-                                    }
+                                    <li class="cloudinary-thumbnail active" value="@i">
+                                        <img src="@resCloud@i@StringJPG" alt="Alternate" class="img-thumbnail" width="100" height="100" with:100% />
+                                        <a href="#" class="cloudinary-delete">x</a>
+                                    </li>
 
                                 }
-                                <div class="form-group">
-                                    <div class="col-md-offset-2 col-md-10">
-                                        <input type="submit" value="Save" class="btn btn-default" />
-                                    </div>
-                                </div>
-                            </div>
+                            </ul>
                         }
 
-                        <div>
-                            @Html.ActionLink("Back to List", "Index")
-                        </div>
+                        @Html.ValidationMessageFor(model => model.Thumbnails, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CreatedAt, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Model.CreatedAt
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CreateBy, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10 ">
+                        @Html.DisplayFor(model => model.CreateBy.Email)
+                    </div>
+                </div>
+                <div class="form-group" hidden>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CreatedAt, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CreatedAt, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group" hidden>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CreateBy, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CreateBy, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group" hidden>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CreateById, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CreateById, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.UpdateBy, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+
+                        @if (@Model.UpdateBy == null)
+                        {
+                            <span>Nobody</span>
+                        }
+                        else
+                        {
+
+                            @Html.DisplayFor(model => model.UpdateBy.Email)
+                        }
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EnumDropDownListFor(model => model.Status, "Please select", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                @if (Model.GetThumbnailIDs().Length > 0)
+                {
+                    foreach (var i in Model.GetThumbnailIDs())
+                    {
+                        <input type="hidden" name="thumbnails[]" data-cloudinary-public-id="@i" value="@("image/upload/v1587911740/"+i+".jpg")">
+                    }
+
+                }
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" class="btn btn-gradient-info btn-fw">Save</button>
                     </div>
                 </div>
             </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
         </div>
     </div>
-</div>
-
-
 @section scripts {
-    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        function showUploadWidget() {
-            cloudinary.openUploadWidget({
-                    cloudName: "namnguyen159198",
-                    uploadPreset: "ml_default",
-                    sources: [
-                        "local",
-                        "url",
-                        "camera",
-                        "image_search",
-                        "facebook",
-                        "dropbox",
-                        "instagram",
-                        "shutterstock"
-                    ],
-                    form: ".product-form",
-                    fieldName: "thumbnails[]",
-                    thumbnails: ".uploaded",
-                    multiple: true,
+            <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+            <script type="text/javascript">
+                function showUploadWidget() {
+                    cloudinary.openUploadWidget({
+                        cloudName: "namnguyen159198",
+                        uploadPreset: "ml_default",
+                        sources: [
+                            "local",
+                            "url",
+                            "camera",
+                            "image_search",
+                            "facebook",
+                            "dropbox",
+                            "instagram",
+                            "shutterstock"
+                        ],
+                        form: ".product-form",
+                        fieldName: "thumbnails[]",
+                        thumbnails: ".uploaded",
+                        multiple: true,
 
-                },
-                (err, info) => {
-                    if (!err) {
-                        console.log("Upload Widget event - ", info);
-                    }
-                });
+                    },
+                        (err, info) => {
+                            if (!err) {
+                                console.log("Upload Widget event - ", info);
+                            }
+                        });
+
+                }
+                $('body').on('click',
+                    '.cloudinary-delete',
+                    function () {
+                        var spiltedLink = $(this).prev().attr('src').split('/');
+                        var imgId = spiltedLink[spiltedLink.length - 1].split('.')[0];
+                        $(`input[data-cloudinary-public-id="${imgId}"]`).remove();
+                        $(`li[value="${imgId}"]`).remove();
+                        alert(imgId);
+                        return false;
+                    });
+                document.getElementById("upload_widget").addEventListener("click", function () {
+                    showUploadWidget();
+                }, false);
+
+            </script>
+
+
+
+
+
 
         }
-        $('body').on('click',
-            '.cloudinary-delete',
-            function () {
-                var spiltedLink = $(this).prev().attr('src').split('/');
-                var imgId = spiltedLink[spiltedLink.length - 1].split('.')[0];
-                $(`input[data-cloudinary-public-id="${imgId}"]`).remove();
-                $(`li[value="${imgId}"]`).remove();
-                alert(imgId);
-                return false;
-            });
-        document.getElementById("upload_widget").addEventListener("click", function () {
-            showUploadWidget();
-        }, false);
-
-    </script>
-
-
-
-
-
-
-}
