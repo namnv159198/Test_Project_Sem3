@@ -527,9 +527,33 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+
     <Compile Include="Migrations\202004301447408_CreateNewDatabase.cs" />
     <Compile Include="Migrations\202004301447408_CreateNewDatabase.Designer.cs">
       <DependentUpon>202004301447408_CreateNewDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\202004230157594_AddProductTable.cs" />
+    <Compile Include="Migrations\202004230157594_AddProductTable.Designer.cs">
+      <DependentUpon>202004230157594_AddProductTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004240351357_AddStatusProductTable.cs" />
+    <Compile Include="Migrations\202004240351357_AddStatusProductTable.Designer.cs">
+      <DependentUpon>202004240351357_AddStatusProductTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004250952439_AddProduct2Table.cs" />
+    <Compile Include="Migrations\202004250952439_AddProduct2Table.Designer.cs">
+      <DependentUpon>202004250952439_AddProduct2Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004270248592_changeArrAvatar.cs" />
+    <Compile Include="Migrations\202004270248592_changeArrAvatar.Designer.cs">
+      <DependentUpon>202004270248592_changeArrAvatar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004290801529_role.cs" />
+    <Compile Include="Migrations\202004290801529_role.Designer.cs">
+      <DependentUpon>202004290801529_role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004301359174_Fixbug.cs" />
+    <Compile Include="Migrations\202004301359174_Fixbug.Designer.cs">
+      <DependentUpon>202004301359174_Fixbug.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -1008,6 +1032,27 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+
+    <EmbeddedResource Include="Migrations\202004230157594_AddProductTable.resx">
+      <DependentUpon>202004230157594_AddProductTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004240351357_AddStatusProductTable.resx">
+      <DependentUpon>202004240351357_AddStatusProductTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004250952439_AddProduct2Table.resx">
+      <DependentUpon>202004250952439_AddProduct2Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004270248592_changeArrAvatar.resx">
+      <DependentUpon>202004270248592_changeArrAvatar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004290801529_role.resx">
+      <DependentUpon>202004290801529_role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004301359174_Fixbug.resx">
+      <DependentUpon>202004301359174_Fixbug.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
